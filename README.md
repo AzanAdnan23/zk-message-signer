@@ -3,7 +3,7 @@
 # 🛠️ Circom Circuit 
 
 
-## ⚙️ 1. Compile Circom Circuit
+## 1. Compile Circom Circuit
 
 ```bash
 circom "$CIRCOM_FILE" -l "$LIB_DIR" --r1cs --wasm --output "$TARGET_DIR"
@@ -15,9 +15,9 @@ circom "$CIRCOM_FILE" -l "$LIB_DIR" --r1cs --wasm --output "$TARGET_DIR"
 
 ---
 
-## 🔐 2. Trusted Setup
+## 2. Trusted Setup
 
-### 🔸 Phase 1: Powers of Tau Ceremony (Universal Setup)
+### Phase 1: Powers of Tau Ceremony (Universal Setup)
 
 ```bash
 snarkjs powersoftau new bn128 12 pot12_0000.ptau -v
@@ -29,7 +29,7 @@ snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="Foo" -v
 
 ---
 
-### 🔸 Phase 2: Circuit-Specific Setup
+### Phase 2: Circuit-Specific Setup
 
 ```bash
 snarkjs powersoftau prepare phase2 "$PROJECT_DIR/$PTAU_FILE" pot12_final.ptau -v
@@ -55,7 +55,7 @@ snarkjs zkey export verificationkey "${R1CS_BASENAME}_0001.zkey" "${R1CS_BASENAM
 
 ---
 
-## 📤 3. Generate Proof
+## 3. Generate Proof
 
 ```bash
 snarkjs groth16 prove $ZKEY_PATH $WITNESS_PATH $TARGET_DIR/proof.json $TARGET_DIR/public.json
@@ -67,7 +67,7 @@ snarkjs groth16 prove $ZKEY_PATH $WITNESS_PATH $TARGET_DIR/proof.json $TARGET_DI
 
 ---
 
-## ✅ 4. Verify Proof
+## 4. Verify Proof
 
 ```bash
 snarkjs groth16 verify $VERIFICATION_KEY $PUBLIC_OUTPUT $PROOF_FILE
