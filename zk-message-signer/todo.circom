@@ -1,0 +1,5 @@
+//1. Allow arbitrary many people in the group
+//2. Implement a new circuit reveal that proves you signed a specific message
+//3. Implement a new circuit deny that proves you did not sign a specific message
+//4. How would you design a "ZK Identity" system for proving you are over 18? What are some other properties you might want to prove? At a high level, how would you implement it, and what challenges do you see? Research existing solutions to get a better understanding of how they are implemented.
+//5. For public blockchains like Ethereum, sometimes a Layer 2 (L2) is used to allow for faster, cheaper and more transactions. At a high level, how would you design an L2 using ZKPs? Explain some challenges you see with this. Research existing solutions to get a better understanding of how they are implemented.

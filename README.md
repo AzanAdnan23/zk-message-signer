@@ -1,6 +1,6 @@
 
 
-# 🛠️ Circom Circuit 
+# Circom Circuit 
 
 
 ## 1. Compile Circom Circuit
